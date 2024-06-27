@@ -1,8 +1,8 @@
 class User {
-  int id;
-  String name;
-  int age;
-  double height;
+  int id = 0;
+  String name = '';
+  int age = 0;
+  double height = 0;
 
   User({required this.id, required this.name, required this.age, required this.height});
 

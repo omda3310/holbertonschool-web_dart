@@ -1,10 +1,8 @@
 class Password {
   String password = '';
 	Password({
-		required String password
-	}) {
-      this._password = password;
-    }
+		required String password,
+	}) : _password = password;
 
 	String get password {
 		return _password;
@@ -15,16 +13,16 @@ class Password {
 	}
 
   bool isValid() {
-    if (password.length < 8 || password.length > 16) {
+    if (_password.length < 8 || _password.length > 16) {
       return false;
     }
-    if (!RegExp(r'[A-Z]').hasMatch(password)) {
+    if (!RegExp(r'[A-Z]').hasMatch(_password)) {
       return false;
     }
-    if (!RegExp(r'[a-z]').hasMatch(password)) {
+    if (!RegExp(r'[a-z]').hasMatch(_password)) {
       return false;
     }
-    if (!RegExp(r'[0-9]').hasMatch(password)) {
+    if (!RegExp(r'[0-9]').hasMatch(_password)) {
       return false;
     }
     return true;

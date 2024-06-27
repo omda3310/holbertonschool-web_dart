@@ -1,5 +1,5 @@
 class Password {
-  String password = '';
+  String _password = '';
 	Password({required String password}) : _password = password;
 
   String get password => _password;

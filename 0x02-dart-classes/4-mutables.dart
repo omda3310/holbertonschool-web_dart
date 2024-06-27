@@ -1,16 +1,12 @@
 class Password {
   String password = '';
-	Password({
-		required String password,
-	}) : _password = password;
+	Password({required String password}) : _password = password;
 
-	String get password {
-		return _password;
-	}
+  String get password => _password;
 
-	void set password(String text) {
-		this._password = text;
-	}
+  set password(String password) {
+    _password = password;
+  }
 
   bool isValid() {
     if (_password.length < 8 || _password.length > 16) {

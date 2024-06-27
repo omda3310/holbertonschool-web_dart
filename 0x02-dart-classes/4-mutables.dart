@@ -1,7 +1,7 @@
 class Password {
   String password = '';
 	Password({
-		required String password,
+		required String password
 	}) {
       this._password = password;
     }

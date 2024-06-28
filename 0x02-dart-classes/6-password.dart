@@ -1,34 +1,25 @@
 class Password {
-  String _password;
+	String _password = '';
 
-  Password({
-    required String password,
-  }) : _password = password;
+	Password({password}) {
+		this._password = password ?? "";
+	}
 
-  String get password => _password;
+	bool isValid() {
+		RegExp regExp = new RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$');
+		return regExp.hasMatch(this._password);
+	}
 
-  set password(String newPassword) {
-    _password = newPassword;
-  }
+	String get password {
+		return this._password;
+	}
 
-  bool isValid() {
-    if (_password.length < 8 || _password.length > 16) {
-      return false;
-    }
+	set password(String password) {
+		this._password = password;
+	}
 
-    if (!_password.contains(RegExp(r'[A-Z]')) || !_password.contains(RegExp(r'[a-z]'))) {
-      return false;
-    }
-
-    if (!_password.contains(RegExp(r'[0-9]'))) {
-      return false;
-    }
-
-    return true;
-  }
-
-  @override
-  String toString() {
-    return "Your Password is: $_password";
-  }
+	@override
+	String toString() {
+		return 'Your Password is: ${this._password}';
+	}
 }

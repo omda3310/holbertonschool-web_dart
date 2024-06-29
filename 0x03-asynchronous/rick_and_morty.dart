@@ -14,6 +14,6 @@ printRmCharacters() async {
       }
     } 
   } catch (e) {
-    print('Error caught: $e');
+    print('error caught: $e');
   }
 }

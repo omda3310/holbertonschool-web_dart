@@ -9,8 +9,8 @@ Future<void> printRmCharacters() async {
       var data = json.decode(response.body);
       List characters = data['results'];
 
-      for (var i = 0; i < 17 && i < characters.length; i++) {
-        print(characters[i]['name']);
+      for (var character in characters) {
+        print(character['name']);
       }
     } 
   } catch (e) {

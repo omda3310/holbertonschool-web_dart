@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-printRmCharacters() async {
+Future<void> printRmCharacters() async {
   try {
     final response = await http.get(Uri.parse('https://rickandmortyapi.com/api/character'));
 
